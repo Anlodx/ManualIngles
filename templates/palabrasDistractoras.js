@@ -1,0 +1,128 @@
+/**
+
+
+
+let string = "";
+let array = []
+let aux = "";
+for(let i = 0; i<string.length;i++ ){
+	if(string[i] == "("){
+	i++;
+		while(string[i] != ")"){
+			aux += "" + string[i];
+			i++;
+		}
+		array[array.length] = aux;
+		aux= "";
+	}
+}
+
+console.log(array);
+
+**/
+
+export const verbosDistractores = ["absorver",
+"aprender",
+"Agregar",
+"Responder",
+"dejar",
+"Aparecer",
+"listar",
+"Llegar",
+"escuchar",
+"Preguntar",
+"vivir",
+"Ladrar",
+"ver",
+"perder",
+"pertenecer",
+"nacer",
+"significar",
+"construir",
+"modificar",
+"poder",
+"mover",
+"aclarar",
+"limpiar",
+"cerrar",
+"empujar",
+"contener",
+"poner, colocar",
+"cocinar",
+"alcanzar",
+"costar",
+"leer",
+"cubrir",
+"grabar",
+"romper",
+"rechazar",
+"crear",
+"permanecer",
+"cruzar",
+"recordar",
+"llorar",
+"reparar",
+"oscurecer",
+"regresar",
+"morir",
+"descubrir",
+"dibujar",
+"vender",
+"beber",
+"manejar",
+"amanecer",
+"secar",
+"mostrar",
+"oír",
+"cantar",
+"comer",
+"sentar",
+"elegir",
+"dormir",
+"entretener",
+"oler",
+"intercambiar",
+"Sonreir",
+"experimentar",
+"resolver",
+"explicar",
+"sonar",
+"expresar",
+"hablar",
+"sentir",
+"terminar",
+"detener",
+"arreglar",
+"estudiar",
+"volar",
+"nadar",
+"seguir",
+"mar",
+"formular",
+"probar",
+"encontrar",
+"congelar",
+"traducir",
+"divertir",
+"viajar",
+"regalar",
+"intentar",
+"dar",
+"encender",
+"ir",
+"crecer",
+"subrayar",
+"tener",
+"usar",
+"ayudar",
+"despertar",
+"honrar",
+"caminar",
+"incluir",
+"lavar",
+"insistir",
+"usar",
+"interrumpir",
+"trabajar",
+"saltar",
+"saber"]
