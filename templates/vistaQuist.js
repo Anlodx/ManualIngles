@@ -56,8 +56,8 @@ const Main = () => {
     return(
         <>
 
-            <Text>Bienvenio al Quizt Empecemos</Text>
-            <Text>Puntaje: {rating}</Text>
+            <Text style={{width:WIDTH,textAlign:"center",fontSize:17,fontWeight:"bold", color:"#0984e3" }}>Bienvenido al Quiz</Text>
+  <Text style={{width:WIDTH,textAlign:"center",fontSize:16, color: "#ff6b6b", fontWeight:"bold" }}>Puntaje: <Text style={{fontWeight:"bold",color:"#222f3e"}}> {rating} </Text> </Text>
 	    <FlatList
 		data={preguntas}
 	    	keyExtractor={item => item}
@@ -91,13 +91,13 @@ const ComponentePregunta = (props) =>{
 	
 	},[]);	
     return(
-        <View style={{width: WIDTH * 0.9, padding: 5, marginTop: 5, backgroundColor: "#45aaf2", alignSelf:"center", alignItems:"center", justifyContent:"space-between", flexDirection:"column", borderRadius:5, borderColor:"#45aaf2",boderWidth:1 }}>
+        <View style={{width: WIDTH * 0.9, padding: 10, marginTop: 5, backgroundColor: "#ecf0f1", alignSelf:"center", alignItems:"center", justifyContent:"space-between", flexDirection:"column", borderRadius:5,borderWidth:1,borderColor:"#b2bec3" }}>
 
-            <Text>¿Qué es "<Text>{objeto.verb}</Text>"?</Text>
+            <Text style={{marginBottom:5,textAlign:"center",fontWeight:"bold", color:"#30336b"}}>¿Qué es <Text style={{fontWeight:"bold",color:"#1abc9c"}}>"{objeto.verb}"</Text>?</Text>
 	{
 		pulsado === 0 ?
 		(
-            <View style={{width: WIDTH * 0.9, backgroundColor: "#fff", padding:12 , alignItems:"center", justifyContent: "space-around", flexDirection:"row", borderLeftWidth:1,borderRightWidth:1,borderColor:"#45aaf2" }}>
+            <View style={{width: WIDTH * 0.9, backgroundColor: "#fff", padding:12 , alignItems:"center", justifyContent: "space-around", flexDirection:"row", borderLeftWidth:1,borderRightWidth:1,borderColor:"#b2bec3" }}>
 		{
 		(acomodoRandom == 1) ?
 		(
@@ -143,7 +143,10 @@ const ComponentePregunta = (props) =>{
 
 		<View>
 			{
-	resultado ? ( <Text>Resultado Correcto</Text> ) : ( <Text>Resultado Incorrecto "{objeto.verb}" es "{objeto.meaning}"</Text> )
+			resultado ? 
+			( <Text style={{padding:5,backgroundColor:"#55efc4",borderRadius:4,color:"#111",fontWeight:"bold"}}>Resultado Correcto</Text> )
+			:
+			( <Text style={{padding:5,backgroundColor:"#ff7675",borderRadius:4,color:"#111",fontWeight:"bold"}}>Resultado Incorrecto "{objeto.verb}" es "{objeto.meaning}"</Text> )
 			}
 		</View>
 
