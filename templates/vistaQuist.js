@@ -45,6 +45,7 @@ function retornaPalabraDistinta(palabra){
 const Main = () => {
     let verbosMapeados = null;
     const [rating , setRating ] = useState(0);
+    const [totalContestadas,setTotalContestadas] = useState(0);
     const [preguntas,setPreguntas] = useState([]);
     useEffect(()=>{
 	console.log("useEffect acabo xd")
@@ -70,10 +71,19 @@ const Main = () => {
 	    	renderItem={({item})=>{
 		  
 		  return(
-		    <ComponentePregunta posicionRandom={Math.ceil(Math.random() * 2)} key={item} objeto={verbosInfinitivo[item]} metodoIncrementar={()=>setRating(rating + 100)} metodoReducir={()=>setRating(rating - 100)} />
+		    <ComponentePregunta posicionRandom={Math.ceil(Math.random() * 2)} key={item} objeto={verbosInfinitivo[item]} metodoIncrementar={()=>{
+			    setRating(rating + 100)
+			    setTotalContestadas(totalContestadas + 1)
+		    }} metodoReducir={()=>{
+			    setRating(rating - 100)
+			    setTotalContestadas(totalContestadas + 1)
+		    }} />
 		  )
 		}}
 	    />
+	    {
+		totalContestadas == 20 ? <ComponenteModal puntaje={rating}/> : null
+	    }
         </>
     )
 }
@@ -156,6 +166,26 @@ const ComponentePregunta = (props) =>{
     )
 }
 
+
+const ComponenteModal = (props) => {
+	const {puntaje} = props;
+	const [visible,setVisible] = useState(true)
+	return(
+		<Modal visible={visible} onRequestClose={()=>setVisible(false)} transparent={true}>
+	         <View style={{width:WIDTH,height: HEIGHT,backgroundColor:"rgba(1,1,1,0.3)",justifyContent:"center",alignItems:"center"}}>
+
+			<View style={{width:WIDTH * 0.8,padding:20,alignSelf:"center", backgroundColor:"white",alignItems:"center",justifyContent:"space-around",borderRadius:5}}>
+			<Text style={{textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>Hola!,Felicitaciones por llegar hasta el final</Text>
+		<Text style={{textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}> tu puntaje fue de: {puntaje}</Text>
+				
+				<TouchableOpacity style={{alignSelf:"center",padding:6,backgroundColor:"#0984e3", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5, marginTop:5}} onPress={()=>setVisible(false)}>
+					<Text style={{textAlign:"center"}}>Volver</Text>
+				</TouchableOpacity>
+			</View>
+		</View>
+		</Modal>
+	)
+}
 
 export default Main;
 
