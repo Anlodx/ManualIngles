@@ -177,7 +177,7 @@ const ComponenteModal = (props) => {
 			<View style={{width:WIDTH * 0.8,padding:20,alignSelf:"center", backgroundColor:"white",alignItems:"center",justifyContent:"space-around",borderRadius:5}}>
 			<Text style={{textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>Hola!,Felicitaciones por llegar hasta el final</Text>
 		<Text style={{textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}> tu puntaje fue de: {puntaje}</Text>
-				
+				<MensajeText puntaje={puntaje}/>
 				<TouchableOpacity style={{alignSelf:"center",padding:6,backgroundColor:"#0984e3", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5, marginTop:5}} onPress={()=>setVisible(false)}>
 					<Text style={{textAlign:"center"}}>Volver</Text>
 				</TouchableOpacity>
@@ -186,6 +186,26 @@ const ComponenteModal = (props) => {
 		</Modal>
 	)
 }
+
+const MensajeText = (props)=>{
+    const {puntaje} = props;
+    if(puntaje == 2000){
+        return <Text style={{backgroundColor:"#7bed9f", textAlign:"center",fontWeight:"bold"}}>Sabia que lo lograrias</Text>;
+    }
+    else if(puntaje ==  0){
+	return <Text style={{backgroundColor:"#ff7f50", textAlign:"center",fontWeight:"bold"}}>No te preocupes, solo necesitas practicar</Text>;
+    }
+    else if(puntaje < 0){
+	return <Text style={{backgroundColor:"#ff4757", textAlign:"center",fontWeight:"bold"}}>No te rindas yo se que puedes</Text>;
+    }
+    else if(puntaje > 0 && puntaje >=1000 && puntaje < 2000){
+	return <Text style={{backgroundColor:"#ffa502", textAlign:"center",fontWeight:"bold"}}>Te acercaste y eso es bueno, sigue mejorando</Text>;
+    }else{
+	return <Text style={{backgroundColor:"#5352ed", textAlign:"center",fontWeight:"bold"}}>Bien amigo</Text>;
+    }
+
+}
+
 
 export default Main;
 
