@@ -7,16 +7,17 @@ import { Button,SearchBar,ButtonGroup } from 'react-native-elements';
 
 const  WIDTH = Dimensions.get("screen").width;
 const  HEIGHT = Dimensions.get("screen").height;
-const Main = () => {
+const Main = (props) => {
+    const {objeto} = props;
     const [hide,setHide] = useState(true)
     const toggleButton = () =>{
         setHide(!hide);
     }
     return(
         <TouchableOpacity onPress={toggleButton} style={{width: WIDTH * 0.9, padding: 5, backgroundColor:"red", alignSelf:"center",borderRadius:5}}>
-            <Text>Present simple</Text>
+            <Text>objeto.verb</Text>
             <View style={{display: hide ? "none" : "flex", backgroundColor:"yellow",alignSelf:"center",width:WIDTH * 0.9,justifyContent:"center",alignItems:"center"}}>
-                <Text>subject + verb + complement</Text>
+                <Text>objeto.meaning</Text>
             </View>
         </TouchableOpacity>
     )
