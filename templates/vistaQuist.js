@@ -83,6 +83,8 @@ const ComponentePregunta = (props) =>{
     const {objeto, metodoIncrementar,metodoReducir,posicionRandom} = props;
 	const [distractor,setDistractor] = useState(null)
 	const [acomodoRandom,setAcomodoRandom] = useState(posicionRandom)
+	const [pulsado,setPulsado] = useState(0)
+	const [resultado,setResultado] = useState(true)
 	useEffect(()=>{
 	let auxDistractor = retornaPalabraDistinta(objeto.meaning);
 	setDistractor(auxDistractor)
@@ -92,32 +94,61 @@ const ComponentePregunta = (props) =>{
         <View style={{width: WIDTH * 0.9, padding: 5, marginTop: 5, backgroundColor: "#45aaf2", alignSelf:"center", alignItems:"center", justifyContent:"space-between", flexDirection:"column", borderRadius:5, borderColor:"#45aaf2",boderWidth:1 }}>
 
             <Text>¿Qué es "<Text>{objeto.verb}</Text>"?</Text>
+	{
+		pulsado === 0 ?
+		(
             <View style={{width: WIDTH * 0.9, backgroundColor: "#fff", padding:12 , alignItems:"center", justifyContent: "space-around", flexDirection:"row", borderLeftWidth:1,borderRightWidth:1,borderColor:"#45aaf2" }}>
 		{
 		(acomodoRandom == 1) ?
 		(
 		<>
-                <TouchableOpacity onPress={metodoIncrementar} style={{padding:6,backgroundColor:"#fed330", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+                <TouchableOpacity onPress={()=>{
+			metodoIncrementar()
+			setPulsado(1)
+			setResultado(true)
+		}} style={{padding:6,backgroundColor:"#fed330", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{objeto.meaning}</Text>
                 </TouchableOpacity>
 
-		<TouchableOpacity onPress={metodoReducir} style={{padding:6,backgroundColor:"#fed330",width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		<TouchableOpacity onPress={()=>{
+			metodoReducir()
+			setPulsado(1)
+			setResultado(false)
+		}} style={{padding:6,backgroundColor:"#fed330",width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{distractor}</Text>
                 </TouchableOpacity>
 		</>
 		) : (
 		<>
-		<TouchableOpacity onPress={metodoReducir} style={{padding:6,backgroundColor:"#fed330",width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		<TouchableOpacity onPress={()=>{
+			metodoReducir()
+			setPulsado(1)
+			setResultado(false)
+		}} style={{padding:6,backgroundColor:"#fed330",width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{distractor}</Text>
                 </TouchableOpacity>
 		
-		<TouchableOpacity onPress={metodoIncrementar} style={{padding:6,backgroundColor:"#fed330", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		<TouchableOpacity onPress={()=>{
+			metodoIncrementar()
+			setPulsado(1)
+			setResultado(true)
+		}} style={{padding:6,backgroundColor:"#fed330", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{objeto.meaning}</Text>
                 </TouchableOpacity>
 		</>	
 		)
 		}
             </View>
+	):(
+
+		<View>
+			{
+	resultado ? ( <Text>Resultado Correcto</Text> ) : ( <Text>Resultado Incorrecto "{objeto.verb}" es "{objeto.meaning}"</Text> )
+			}
+		</View>
+
+	)}
+
         </View>
     )
 }
