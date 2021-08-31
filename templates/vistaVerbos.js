@@ -25,10 +25,15 @@ const Main = () => {
         <Text style={{width:WIDTH,textAlign:"center",fontSize:17,fontWeight:"bold", color:"#0984e3" }}>Verbos en infinitivo</Text>
         
 	    <FlatList
-		    data={verbos}
-	    	keyExtractor={item => item.verbo}
-	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:10}}/>}
-            ListEmptyComponent={()=>(
+		data={verbos}
+	    	horizontal={false}
+	        numColumns={2}
+	    	columnWrapperStyle={{justifyContent:"space-around"}}
+	    	keyExtractor={item => item.verb}
+	        ListHeaderComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
+	        ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
+	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:15}}/>}
+	        ListEmptyComponent={()=>(
                 <View style={{width:WIDTH * 0.8 , padding: 15, backgroundColor: "#fa8231",alignSelf:"center", borderRadius:10,marginTop:10}}>
                     <Text style={{textAlign:"center"}}>Espere un momento...</Text>
                     <LinearProgress color="primary" />

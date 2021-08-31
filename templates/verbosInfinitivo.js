@@ -24,7 +24,7 @@ export const verbosInfinitivo = [{"verb"  :  "To absorb" , "meaning" : "absorver
 },{"verb"  :  "To move" , "meaning" : "mover"
 },{"verb"  :  "To clarify" , "meaning" : "aclarar"
 },{"verb"  :  "To clean" , "meaning" : "limpiar"
-},{"verb"  :  "To play" , "meaning" : "jugar,tocar un instrumento,actuar"
+},{"verb"  :  "To play" , "meaning" : "jugar,tocar(instrumento)"
 },{"verb"  :  "To close" , "meaning" : "cerrar"
 },{"verb"  :  "To pull" , "meaning" : "empujar"
 },{"verb"  :  "To contain" , "meaning" : "contener"
@@ -96,7 +96,7 @@ export const verbosInfinitivo = [{"verb"  :  "To absorb" , "meaning" : "absorver
 },{"verb"  :  "To give" , "meaning" : "dar"
 },{"verb"  :  "To turn on" , "meaning" : "encender"
 },{"verb"  :  "To go" , "meaning" : "ir"
-},{"verb"  :  "To type" , "meaning" : "Escribir a máquina,teclear"
+},{"verb"  :  "To type" , "meaning" : "teclear"
 },{"verb"  :  "To grow" , "meaning" : "crecer"
 },{"verb"  :  "To underline" , "meaning" : "subrayar"
 },{"verb"  :  "To have" , "meaning" : "tener"
@@ -114,4 +114,4 @@ export const verbosInfinitivo = [{"verb"  :  "To absorb" , "meaning" : "absorver
 },{"verb"  :  "To jump" , "meaning" : "saltar"
 },{"verb"  :  "To write" , "meaning" : "Escribir"
 },{"verb"  :  "To know" , "meaning" : "saber"
-},{"verb"  :  "To zoom" , "meaning" : "moverse con rapidez"}]
+},{"verb"  :  "To zoom" , "meaning" : "moverse rapido"}]

@@ -20,6 +20,7 @@ import {
 } from 'react-native';
 import VistaTiempos from "./templates/vistaTiempos"
 import VistaQuist from "./templates/vistaQuist"
+import VistaVerbos from "./templates/vistaVerbos"
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -36,7 +37,7 @@ function NotificationsScreen({ navigation }) {
 const Drawer = createDrawerNavigator();
 const App = () => {
   return(
-    <VistaQuist/>
+    <VistaVerbos/>
   )
 /*
   return (

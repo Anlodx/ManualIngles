@@ -62,7 +62,9 @@ const Main = () => {
 	    <FlatList
 		data={preguntas}
 	    	keyExtractor={item => item}
-	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:10}}/>}
+	    	 ListHeaderComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
+                ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
+                ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:10}}/>}
 		ListEmptyComponent={()=>(
 			<View style={{width:WIDTH * 0.8 , padding: 15, backgroundColor: "#fa8231",alignSelf:"center", borderRadius:10,marginTop:10}}>
 				<Text style={{textAlign:"center"}}>Espere un momento...</Text>
@@ -116,7 +118,7 @@ const ComponentePregunta = (props) =>{
 			metodoIncrementar()
 			setPulsado(1)
 			setResultado(true)
-		}} style={{padding:6,backgroundColor:"#fed330", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		}} style={{padding:6,backgroundColor:"#fed330", padding: 15, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{objeto.meaning}</Text>
                 </TouchableOpacity>
 
@@ -124,7 +126,7 @@ const ComponentePregunta = (props) =>{
 			metodoReducir()
 			setPulsado(1)
 			setResultado(false)
-		}} style={{padding:6,backgroundColor:"#fed330",width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		}} style={{padding:6,backgroundColor:"#fed330",padding: 15, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{distractor}</Text>
                 </TouchableOpacity>
 		</>
@@ -134,7 +136,7 @@ const ComponentePregunta = (props) =>{
 			metodoReducir()
 			setPulsado(1)
 			setResultado(false)
-		}} style={{padding:6,backgroundColor:"#fed330",width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		}} style={{padding:6,backgroundColor:"#fed330",padding: 15, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{distractor}</Text>
                 </TouchableOpacity>
 		
@@ -142,7 +144,7 @@ const ComponentePregunta = (props) =>{
 			metodoIncrementar()
 			setPulsado(1)
 			setResultado(true)
-		}} style={{padding:6,backgroundColor:"#fed330", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5 }}>
+		}} style={{padding:6,backgroundColor:"#fed330", padding: 15, justifyContent:"center", borderRadius:5 }}>
                     <Text style={{textAlign:"center"}}>{objeto.meaning}</Text>
                 </TouchableOpacity>
 		</>	
@@ -154,9 +156,9 @@ const ComponentePregunta = (props) =>{
 		<View>
 			{
 			resultado ? 
-			( <Text style={{padding:5,backgroundColor:"#55efc4",borderRadius:4,color:"#111",fontWeight:"bold"}}>Resultado Correcto</Text> )
+			( <Text style={{width:WIDTH * 0.8,textAlign:"center",padding:5,backgroundColor:"#55efc4",borderRadius:4,color:"#111",fontWeight:"bold"}}>Resultado Correcto</Text> )
 			:
-			( <Text style={{padding:5,backgroundColor:"#ff7675",borderRadius:4,color:"#111",fontWeight:"bold"}}>Resultado Incorrecto "{objeto.verb}" es "{objeto.meaning}"</Text> )
+			( <Text style={{width:WIDTH * 0.8,textAlign:"center",padding:5,backgroundColor:"#ff7675",borderRadius:4,color:"#111",fontWeight:"bold"}}>Resultado Incorrecto "{objeto.verb}" es "{objeto.meaning}"</Text> )
 			}
 		</View>
 
@@ -190,18 +192,18 @@ const ComponenteModal = (props) => {
 const MensajeText = (props)=>{
     const {puntaje} = props;
     if(puntaje == 2000){
-        return <Text style={{backgroundColor:"#7bed9f", textAlign:"center",fontWeight:"bold"}}>Sabia que lo lograrias</Text>;
+        return <Text style={{padding:4,borderRadius:5,backgroundColor:"#7bed9f", textAlign:"center",fontWeight:"bold"}}>Sabia que lo lograrias</Text>;
     }
     else if(puntaje ==  0){
-	return <Text style={{backgroundColor:"#ff7f50", textAlign:"center",fontWeight:"bold"}}>No te preocupes, solo necesitas practicar</Text>;
+	return <Text style={{padding:4,borderRadius:5,backgroundColor:"#ff7f50", textAlign:"center",fontWeight:"bold"}}>No te preocupes, solo necesitas practicar</Text>;
     }
     else if(puntaje < 0){
-	return <Text style={{backgroundColor:"#ff4757", textAlign:"center",fontWeight:"bold"}}>No te rindas yo se que puedes</Text>;
+	return <Text style={{padding:4,borderRadius:5,backgroundColor:"#ff4757", textAlign:"center",fontWeight:"bold"}}>No te rindas yo se que puedes</Text>;
     }
     else if(puntaje > 0 && puntaje >=1000 && puntaje < 2000){
-	return <Text style={{backgroundColor:"#ffa502", textAlign:"center",fontWeight:"bold"}}>Te acercaste y eso es bueno, sigue mejorando</Text>;
-    }else{
-	return <Text style={{backgroundColor:"#5352ed", textAlign:"center",fontWeight:"bold"}}>Bien amigo</Text>;
+	return <Text style={{padding:4,borderRadius:5,backgroundColor:"#ffa502", textAlign:"center",fontWeight:"bold"}}>Te acercaste y eso es bueno, sigue mejorando</Text>;
+    }else if(puntaje>0 && puntaje<1000){
+	return <Text style={{padding:4,borderRadius:5,backgroundColor:"#feca57", textAlign:"center",fontWeight:"bold"}}>Bien amigo</Text>;
     }
 
 }
