@@ -1,5 +1,5 @@
 
-[{slang: "Indeed", meaning: " Ya lo creo "}
+export const slangsSimples = [{slang: "Indeed", meaning: " Ya lo creo "}
 ,{slang: "Inside out", meaning: " Del revés "}
 ,{slang: "Is cutting edge", meaning: " Es el último grito/moda "}
 ,{slang: "Is giving him hell", meaning: " Le hace la vida imposible "}
@@ -54,7 +54,7 @@
 ,{slang: "No wonder", meaning: " No me extraña "}
 ,{slang: "No worries", meaning: " Sin problema / no te preocupes "}
 ,{slang: "Nor/neither do I", meaning: " Yo tampoco "}
-,{slang: "Not a chance / No way in hell", meaning: " Ninguna posibilidad / Ni de coña "}
+,{slang: "Not a chance / No way in hell", meaning: " Ninguna posibilidad "}
 ,{slang: "Not at all/You’re welcome/It’s Ok", meaning: " De nada (tras agradecimiento) "}
 ,{slang: "Not Bad", meaning: " No está mal "}
 ,{slang: "Not for nothing", meaning: " No es por nada "}
@@ -123,7 +123,7 @@
 ,{slang: "To hang up", meaning: " Colgar (teléfono) "}
 ,{slang: "To have a blast", meaning: " Pasarlo bien / divertirse "}
 ,{slang: "To have a bone to pick (with someone)", meaning: " Tener cuentas que ajustar (con alguien) "}
-,{slang: "To have a finger in every pie", meaning: " Estar en misa y repicando / Intentar estar en todo a la vez "}
+,{slang: "To have a finger in every pie", meaning: " Intentar estar en todo a la vez "}
 ,{slang: "To have a thing about [something]", meaning: " Estar loco, obsesionado por algo "}
 ,{slang: "To have an argue", meaning: " Tener una discusión "}
 ,{slang: "To keep at bay", meaning: " Mantener a raya "}
@@ -148,3 +148,86 @@
 ,{slang: "You are on your own", meaning: " Estás solo en esto "}
 ,{slang: "You never know", meaning: " Nunca se sabe "}
 ,{slang: "You’re on thin ice", meaning: " Te la estás jugando"}]
+
+
+
+export const slangsConDescripciones = [{slang: "Beat around the bush ", meaning:" Andarse con rodeos o Tener más vueltas que la oreja "
+,uso:"Se utiliza para expresar que una persona está intentando evitar decir algo, por lo general porque se trata de información incómoda."},
+
+{slang: "Better late than never ", meaning:" Más vale tarde que nunca "
+,uso:"Se trata de una expresión muy usada, que tiene un equivalente igualmente popular en la lengua castellana. Se utiliza para señalar que es mejor llegar tarde que nunca presentarse. Puede hacer referencia a un destino físico como a un lugar en sentido metafórico, sea una idea, forma de pensar o actitud."},
+
+{slang: "Break a leg ", meaning:" Buena suerte "
+,uso:"Este modismo circula mucho por los escenarios y ámbitos vinculados al teatro, en castellano tenemos una versión coloquial que no tiene la mayor de las delicadezas: ‘Mucha mierda’. Si conoces un actor que está por salir a escena, no dudes en desearle ‘Break a leg’."},
+
+{slang: "See eye to eye ", meaning:" Estar de acuerdo con alguien "
+,uso:"Un ejemplo de cómo se usa este modismo podría ser: ‘We see eye to eye with him on this’, que en castellano sería ‘Estamos de acuerdo en esto con él.’"},
+
+{slang: "Let the cat out of the bag ", meaning:" Revelar un secreto por error "
+,uso:"Cuando por error se te escapa un secreto que debías conservar, esta frase te sirve 'como anillo al dedo'. ‘He let the cat out of the bag about her trip’, en castellano: ‘A él se le escapó lo del viaje de ella’."},
+
+{slang: "To kill two birds with one stone ", meaning:" Matar dos pájaros de un tiro "
+,uso:"Es un modismo muy usado tanto en inglés como su equivalente castellano. Hace referencia a cuando una propuesta ofrece una solución a dos problemas de una sola vez."},
+
+{slang: "To cost an arm and a leg ", meaning:" Costar un riñón "
+,uso:"Se usa para expresar que algo es muy caro."},
+
+{slang: "When pigs fly ", meaning:" Cuando los cerdos vuelen "
+,uso:"Teñida de ironía, esta frase indica que aquello de lo que se está hablando no va a ocurrir nunca. ‘He will finish his degree when pigs fly’, que en español sería: ‘Él terminará su carrera cuando los cerdos vuelen’."},
+
+{slang: "Miss the boat ", meaning:" Se va a pasar el tren "
+,uso:"Este es un modismo ideal para las personas despistadas o que tardan mucho en hacer las cosas. Suele hacer referencia a perder una oportunidad por no llegar a tiempo a ella. Por ejemplo: ‘You should go to that job interview or you will miss the boat’, en español: ‘Deberías ir a esa entrevista de trabajo o se te va a pasar el tren’."},
+
+{slang: "You can’t judge a book by its cover ", meaning:" No juzgues un libro por su portada "
+,uso:"Este modismo es muy atinado para los tiempos que corren. Es un recordatorio de que la apariencia engaña, y que no conviene caer en rápidos juicios cuando apenas conoces a una persona. A veces se utiliza para lugares o cosas, no solo personas."},
+
+{slang: "Hit the sack ", meaning:" Descansar "
+,uso:"Sirve para decir que te vas a dormir: ‘Tonight I hit the sack early, I’m so tired’."},
+
+{slang: "Add fuel to the fire ", meaning:" Tirarle leña al fuego "
+,uso:"Cuando, en medio de una situación difícil, alguien hace algo que empeora las cosas en castellano decimos que le tira leña al fuego, en inglés, combustible."},
+
+{slang: "To be all ears ", meaning:" Ser todo orejas "
+,uso:"Es una expresión que tiene un equivalente directo en castellano, y hace referencia a cuando estamos muy dispuestos y deseamos escuchar lo que otra persona quiere decirnos."},
+
+{slang: "Curiosity killed the cat ", meaning:" La curiosidad mató al gato "
+,uso:"En castellano usamos el equivalente directo de esta expresión, que hace referencia a que puedes meterte en problemas por ser demasiado curioso."},
+
+{slang: "Smell a rat ", meaning:" Parece sospechoso "
+,uso:"Esta expresión en inglés hace referencia a un traidor, o a una persona que tiene un comportamiento ilegal o inmoral. Se dice que 'hueles una rata' cuando algo suscita sospechas de una traición o daño."},
+
+{slang: "Don’t pull all your eggs in one basket ", meaning:" No jugarse todo a una sola carta "
+,uso:"Es un modismo que se utiliza para advertirle a alguien que no ponga todos sus esfuerzos o recursos en una sola opción, y que diversifique para reducir riesgos."},
+
+{slang: "Lose your touch ", meaning:" Perder el arte "
+,uso:"'Perder el tacto' se utiliza para decir que una persona pierde la sensibilidad en relación a una cuestión. En castellano, probablemente, usaríamos 'perder el arte' para situaciones similares. Por ejemplo, una persona puede 'perder el arte' con las chicas y dejar de ser un Don Juán."},
+
+{slang: "The elephant in the room ", meaning:" El elefante en la habitación "
+,uso:"Cuando una cuestión importante, y evidente, precisa ser debatida pero nadie la trae a colación, se dice que hay 'un elefante en la habitación'. En castellano, a veces usamos esa expresión para señalar que alguien no percibe algo obvio."},
+
+{slang: "You can say that again ", meaning:" Ni que lo digas "
+,uso:"Si estás de acuerdo con lo que una persona está diciendo, puedes utilizar esta expresión que equivale a la versión castellana 'Ni que lo digas'."},
+
+{slang: "Cut to the chase ", meaning:" Ir al grano "
+,uso:"Indica la necesidad de ir directamente al nudo de un tema cuando una persona está hablando y evitar dar detalles o matices innecesarios."},
+
+{slang: "Wouldn’t be caught dead ", meaning:" Ni muerta "
+,uso:"Esta frase se utiliza para señalar que uno no está dispuesto a hacer algo, o que algo realmente le desagrada mucho. El equivalente para ciertas regiones hispanoparlantes es 'Ni muerta'. Como por ejemplo: 'Ni muerta me pongo un vestido'."},
+
+{slang: "Call a spade a spade ", meaning:" Llamar las cosas por su nombre "
+,uso:"En inglés usan la expresión 'llamar a la espada espada' como equivalente a nuestro 'llamar las cosas por su nombre', que sirve cuando uno está dispuesto a decir una verdad aunque esta esté mal vista."},
+
+{slang: "Don’t run before you can walk ", meaning:" Paso a paso "
+,uso:"Pedirle a alguien que 'no corra antes de que pueda caminar' implica aconsejarle que no intente hacer algo difícil antes de aprender lo básico. Se utiliza especialmente en casos como por ejemplo cuando alguien está aprendiendo a nadar, o a escalar."},
+
+{slang: "Up in the air ", meaning:" En el aire "
+,uso:"Cuando un proyecto o un plan está plagado de incertidumbres y no se sabe si se concretará, se dice que está 'en el aire'."},
+
+{slang: "Get up on the wrong side of the bed ", meaning:" Despertarse con el pie izquierdo "
+,uso:"Si estás de mal humor y gruñes por todo, bien te pueden decir que te 'despertaste con el pie izquierdo'."},
+
+{slang: "Scratch someone’s back ", meaning:" hoy por ti mañana por mi "
+,uso:"Si haces un favor y esperas que te sea devuelto de alguna manera, entonces se puede decir que le 'estás rascando la espalda a alguien'."},
+
+{slang: "Hit the road ", meaning:" Echarse a la carretera "
+,uso:"Aquellos que parten de viaje o se van a algún sitio, son quienes 'se echan a la carretera'. En inglés, esta expresión también puede usarse para decir, simplemente, que te vas. Por ejemplo: 'It got late so she hit the road' - 'Se hizo tarde, por lo que se fue'."}]
