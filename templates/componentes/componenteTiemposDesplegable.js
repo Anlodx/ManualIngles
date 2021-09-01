@@ -14,10 +14,11 @@ const Main = (props) => {
         setHide(!hide);
     }
     return(
-        <TouchableOpacity onPress={toggleButton} style={{ padding: 10, backgroundColor:"#feca57", alignSelf:"center",borderRadius:5}}>
+        <TouchableOpacity onPress={toggleButton} style={{width: WIDTH * 0.6, padding: 12, backgroundColor:"#feca57", alignSelf:"center",borderRadius:5}}>
+	    
             <Text style={{fontWeight:"bold",textAlign:"center"}}>{objeto.verb}</Text>
-            <View style={{display: hide ? "none" : "flex", borderRadius:5, backgroundColor:"#ff9f43",alignSelf:"center",padding:6,justifyContent:"center",alignItems:"center"}}>
-                <Text style={{fontWeight:"bold",textAlign:"center"}}>{objeto.meaning}</Text>
+            <View style={{display: hide ? "none" : "flex", borderRadius:5, backgroundColor:"#ff6b6b",alignSelf:"center",padding:6,justifyContent:"center",alignItems:"center"}}>
+                <Text style={{fontWeight:"bold",textAlign:"center",color:"white"}}>{objeto.meaning}</Text>
             </View>
         </TouchableOpacity>
     )

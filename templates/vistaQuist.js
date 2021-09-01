@@ -66,7 +66,7 @@ const Main = () => {
                 ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
                 ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:10}}/>}
 		ListEmptyComponent={()=>(
-			<View style={{width:WIDTH * 0.8 , padding: 15, backgroundColor: "#fa8231",alignSelf:"center", borderRadius:10,marginTop:10}}>
+			<View style={{width:WIDTH * 0.8 , padding: 15, backgroundColor: "#ffa502",alignSelf:"center", borderRadius:10,marginTop:10}}>
 				<Text style={{textAlign:"center"}}>Espere un momento...</Text>
 			</View>
 		)}
@@ -181,7 +181,7 @@ const ComponenteModal = (props) => {
 		<Text style={{textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}> tu puntaje fue de: {puntaje}</Text>
 				<MensajeText puntaje={puntaje}/>
 				<TouchableOpacity style={{alignSelf:"center",padding:6,backgroundColor:"#0984e3", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5, marginTop:5}} onPress={()=>setVisible(false)}>
-					<Text style={{textAlign:"center"}}>Volver</Text>
+					<Text style={{textAlign:"center",fontWeight:"bold"}}>Volver</Text>
 				</TouchableOpacity>
 			</View>
 		</View>

@@ -1,4 +1,4 @@
-
+//149 total
 export const slangsSimples = [{slang: "Indeed", meaning: " Ya lo creo "}
 ,{slang: "Inside out", meaning: " Del revés "}
 ,{slang: "Is cutting edge", meaning: " Es el último grito/moda "}
@@ -150,7 +150,7 @@ export const slangsSimples = [{slang: "Indeed", meaning: " Ya lo creo "}
 ,{slang: "You’re on thin ice", meaning: " Te la estás jugando"}]
 
 
-
+//total 25
 export const slangsConDescripciones = [{slang: "Beat around the bush ", meaning:" Andarse con rodeos o Tener más vueltas que la oreja "
 ,uso:"Se utiliza para expresar que una persona está intentando evitar decir algo, por lo general porque se trata de información incómoda."},
 

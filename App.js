@@ -21,45 +21,28 @@ import {
 import VistaTiempos from "./templates/vistaTiempos"
 import VistaQuist from "./templates/vistaQuist"
 import VistaVerbos from "./templates/vistaVerbos"
+import VistaSlangs from "./templates/vistaSlangs"
+import VistaNouns from "./templates/vistaNouns"
+
+
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>Go back Home again bro</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
 
 const Drawer = createDrawerNavigator();
 const App = () => {
-  return(
-    <VistaVerbos/>
-  )
-/*
+  
   return (
     <NavigationContainer>
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+    <Drawer.Navigator initialRouteName="Nouns">
+      <Drawer.Screen name="Nouns" component={VistaNouns} />
+      <Drawer.Screen name="Slangs" component={VistaSlangs} />
+      <Drawer.Screen name="Verbs" component={VistaVerbos} />
+      <Drawer.Screen name="Quiz" component={VistaQuist} />
     </Drawer.Navigator>
   </NavigationContainer>
   );
-*/
+
 };
-
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-        <Text>Go to notifications</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
 
 export default App;
