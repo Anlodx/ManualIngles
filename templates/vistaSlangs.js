@@ -1,11 +1,11 @@
 import React,  {useRef,useState, useEffect} from 'react';
-import {ActivityIndicator,TouchableOpacity,Text, View, StyleSheet, Alert, SafeAreaView, ScrollView, StatusBar, Dimensions, FlatList, Modal } from 'react-native';
+import {RefreshControl, ActivityIndicator,TouchableOpacity,Text, View, StyleSheet, Alert, SafeAreaView, ScrollView, StatusBar, Dimensions, FlatList, Modal } from 'react-native';
 
 import {slangsSimples} from "./slangs";
 import { LinearProgress  } from 'react-native-elements';
 const  WIDTH = Dimensions.get("screen").width;
 const  HEIGHT = Dimensions.get("screen").height;
-
+import Tts from 'react-native-tts';
 
 
 function retornaVector(){
@@ -32,14 +32,26 @@ function retornaVector(){
 const Main = () => {
 
     const [slangs,setSlangs] = useState([]);
+    const [refresh,setRefresh] = useState(false)
     useEffect(()=>{
-        console.log("useEffect acabo xd")
+        console.log("useEffect acabo xd slangs")
 	let slangsAElegir = retornaVector();
 
 
         setSlangs(slangsAElegir)
 
     },[]);
+
+    
+    const update = () => {
+        setRefresh(true)
+        let slangsNuevos = retornaVector();
+
+
+        setSlangs(slangsNuevos)
+        setRefresh(false)
+    }
+
     return(
         <>
 
@@ -47,6 +59,7 @@ const Main = () => {
 
             <FlatList
                 data={slangs}
+                refreshControl={<RefreshControl colors={["#feca57","#ff6b6b","#48dbfb","#1dd1a1"]} refreshing={refresh} onRefresh={update} />}
                 keyExtractor={item => item.verb}
                 ListHeaderComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
                 ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
@@ -60,10 +73,10 @@ const Main = () => {
                 renderItem={({item})=>{
 
                 return(
-                    <View key={item} style={{width: WIDTH * 0.8, padding:10, backgroundColor: "#fff", alignSelf:"center",borderRadius:5,borderWidth: 1,borderColor:"rgba(1,1,1,0.3)",elevation:3}}>
+                    <TouchableOpacity  onPress={()=>speak(slangsSimples[item].slang)} key={item} style={{width: WIDTH * 0.8, padding:10, backgroundColor: "#fff", alignSelf:"center",borderRadius:5,borderWidth: 1,borderColor:"rgba(1,1,1,0.3)",elevation:3}}>
 			<Text style={{textAlign:"center",color:"#111", fontWeight:"bold",fontSize:14}}>{slangsSimples[item].slang} </Text>
 			<Text style={{textAlign:"center",color:"#ffa502",fontWeight:"bold",fontSize:12}}>{slangsSimples[item].meaning} </Text>
-		    </View>
+		    </TouchableOpacity>
                 )
             }}
             />
@@ -72,6 +85,16 @@ const Main = () => {
     )
 }
 
+const  speak = (texto) => {
+    Tts.setDefaultRate(0.3);
+    Tts.setDefaultLanguage('en-US');
+    //Tts.setDefaultVoice('com.apple.ttsbundle.Samantha-compact');
+    Tts.getInitStatus().then(() => {
+        Tts.speak(texto);
+    });
+    Tts.stop();
+
+}
 
 export default Main;
 

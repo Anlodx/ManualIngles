@@ -1,9 +1,10 @@
 import React,  {useRef,useState, useEffect} from 'react';
-import {ActivityIndicator,TouchableOpacity,Text, View, StyleSheet, Alert, SafeAreaView, ScrollView, StatusBar, Dimensions, FlatList, Modal } from 'react-native';
+import {RefreshControl,ActivityIndicator,TouchableOpacity,Text, View, StyleSheet, Alert, SafeAreaView, ScrollView, StatusBar, Dimensions, FlatList, Modal } from 'react-native';
 
 import {verbosInfinitivo} from "./verbosInfinitivo";
 import { LinearProgress  } from 'react-native-elements';
 import ComponenteVerbo from "./componentes/componenteTiemposDesplegable"
+import Tts from 'react-native-tts';
 const  WIDTH = Dimensions.get("screen").width;
 const  HEIGHT = Dimensions.get("screen").height;
 
@@ -31,13 +32,25 @@ function retornaVector(){
 const Main = () => {
     
     const [verbos,setVerbos] = useState([]);
+    const [refresh,setRefresh] = useState(false)
     useEffect(()=>{
-	console.log("useEffect acabo xd")
+	console.log("useEffect acabo xd verbos")
 	let verbosAux = retornaVector()	
         
 	setVerbos(verbosAux)
 
     },[]);
+
+    
+    
+    const update = () => {
+        setRefresh(true)
+        let verbosNuevos = retornaVector()	
+        
+    	setVerbos(verbosNuevos)
+
+        setRefresh(false)
+    }
     return(
         <>
 
@@ -46,6 +59,7 @@ const Main = () => {
 	    <FlatList
 		data={verbos}
 	    	keyExtractor={item => item}
+            refreshControl={<RefreshControl colors={["#feca57","#ff6b6b","#48dbfb","#1dd1a1"]} refreshing={refresh} onRefresh={update} />}
 	        ListHeaderComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
 	        ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
 	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:15}}/>}
