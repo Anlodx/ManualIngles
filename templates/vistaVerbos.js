@@ -54,13 +54,13 @@ const Main = () => {
     return(
         <>
 
-        <Text style={{width:WIDTH,textAlign:"center",fontSize:17,fontWeight:"bold", color:"#0984e3" }}>Verbos en infinitivo</Text>
+        
         
 	    <FlatList
 		data={verbos}
 	    	keyExtractor={item => item}
             refreshControl={<RefreshControl colors={["#feca57","#ff6b6b","#48dbfb","#1dd1a1"]} refreshing={refresh} onRefresh={update} />}
-	        ListHeaderComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
+	        ListHeaderComponent={()=><ComponenteModal titulo={"Verbos"} subtitulo={"Los verbos son aquellas acciones ejecutadas por un sustantivo, por ejemplo \"una persona escribe\", \"escribe\" es el verbo ya que es la acción realizada por el sujeto."}/>}
 	        ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
 	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:15}}/>}
 	        ListEmptyComponent={()=>(
@@ -79,6 +79,33 @@ const Main = () => {
 	    
         </>
     )
+}
+
+
+
+const ComponenteModal = (props) => {
+	const {titulo,subtitulo} = props;
+	const [visible,setVisible] = useState(false)
+	return(
+        <>
+        <Text onPress={()=>setVisible(true)} style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>{titulo}</Text>
+        <Text onPress={()=>setVisible(true)} style={{margin:1, textAlign:"center",fontSize:13,fontWeight:"bold", color:"rgba(1,1,1,0.3)" }}>pulsa para detalles</Text>
+        <Text style={{marginBottom:3, textAlign:"center",fontSize:13,fontWeight:"bold", color:"rgba(1,1,1,0.3)" }}>Jala hacia abajo la lista para recargar</Text>
+		<Modal visible={visible} onRequestClose={()=>setVisible(false)} transparent={true}>
+	         <View style={{width:WIDTH,height: HEIGHT,backgroundColor:"rgba(1,1,1,0.3)",justifyContent:"center",alignItems:"center"}}>
+
+			<View style={{width:WIDTH * 0.95,padding:20,alignSelf:"center", backgroundColor:"white",alignItems:"center",justifyContent:"space-around",borderRadius:5}}>
+			<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>{titulo}</Text>
+    		<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}>{subtitulo}</Text>
+				
+				<TouchableOpacity style={{margin:4, alignSelf:"center",padding:6,backgroundColor:"#ff6b6b", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5, marginTop:5}} onPress={()=>setVisible(false)}>
+					<Text style={{textAlign:"center",fontWeight:"bold",color:"white"}}>Volver</Text>
+				</TouchableOpacity>
+			</View>
+		</View>
+		</Modal>
+        </>
+	)
 }
 
 
