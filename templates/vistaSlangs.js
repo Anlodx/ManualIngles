@@ -61,7 +61,7 @@ const Main = () => {
                 data={slangs}
                 refreshControl={<RefreshControl colors={["#feca57","#ff6b6b","#48dbfb","#1dd1a1"]} refreshing={refresh} onRefresh={update} />}
                 keyExtractor={item => item.verb}
-                ListHeaderComponent={()=><ComponenteModal titulo={"Slangs"} subtitulo={"Los Slangs son frases coloquiales o modismos, en español los podriamos definir como los \"dichos\"."}/>}
+                ListHeaderComponent={()=><ComponenteModal titulo={"Slangs"} subtitulo={"Los Slangs son frases coloquiales o modismos, que dicen algo de manera informal, en español los podríamos entender como los \"dichos\"."}/>}
                 ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
                 ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:15}}/>}
                 ListEmptyComponent={()=>(

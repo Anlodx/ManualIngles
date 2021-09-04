@@ -177,8 +177,8 @@ const ComponenteModal = (props) => {
 	         <View style={{width:WIDTH,height: HEIGHT,backgroundColor:"rgba(1,1,1,0.3)",justifyContent:"center",alignItems:"center"}}>
 
 			<View style={{width:WIDTH * 0.8,padding:20,alignSelf:"center", backgroundColor:"white",alignItems:"center",justifyContent:"space-around",borderRadius:5}}>
-			<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>Hola!,Felicitaciones por llegar hasta el final</Text>
-		<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}> tu puntaje fue de: {puntaje}</Text>
+			<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>Hola!, Felicitaciones por llegar hasta el final</Text>
+		<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}> Tu puntaje fue de: {puntaje}</Text>
 				<MensajeText puntaje={puntaje}/>
 				<TouchableOpacity style={{margin:4, alignSelf:"center",padding:6,backgroundColor:"#6c5ce7", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5, marginTop:5}} onPress={()=>setVisible(false)}>
 					<Text style={{textAlign:"center",fontWeight:"bold",color:"white"}}>Volver</Text>
@@ -192,18 +192,18 @@ const ComponenteModal = (props) => {
 const MensajeText = (props)=>{
     const {puntaje} = props;
     if(puntaje == 2000){
-        return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#7bed9f", textAlign:"center",fontWeight:"bold"}}>Sabia que lo lograrias</Text>;
+        return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#7bed9f", textAlign:"center",fontWeight:"bold"}}>Sabía que lo lograrías.</Text>;
     }
     else if(puntaje ==  0){
-	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#ff7f50", textAlign:"center",fontWeight:"bold"}}>No te preocupes, solo necesitas practicar</Text>;
+	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#ff7f50", textAlign:"center",fontWeight:"bold"}}>No te preocupes, solo necesitas practicar.</Text>;
     }
     else if(puntaje < 0){
-	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#ff4757", textAlign:"center",fontWeight:"bold"}}>No te rindas yo se que puedes</Text>;
+	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#ff4757", textAlign:"center",fontWeight:"bold"}}>No te rindas yo sé que puedes.</Text>;
     }
     else if(puntaje > 0 && puntaje >=1000 && puntaje < 2000){
-	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#ffa502", textAlign:"center",fontWeight:"bold"}}>Te acercaste y eso es bueno, sigue mejorando</Text>;
+	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#ffa502", textAlign:"center",fontWeight:"bold"}}>Te acercaste y eso es bueno, sigue mejorando.</Text>;
     }else if(puntaje>0 && puntaje<1000){
-	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#feca57", textAlign:"center",fontWeight:"bold"}}>Bien amigo</Text>;
+	return <Text style={{margin:3, padding:4,borderRadius:5,backgroundColor:"#feca57", textAlign:"center",fontWeight:"bold"}}>Bien amigo.</Text>;
     }
 
 }

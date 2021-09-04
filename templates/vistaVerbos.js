@@ -60,7 +60,7 @@ const Main = () => {
 		data={verbos}
 	    	keyExtractor={item => item}
             refreshControl={<RefreshControl colors={["#feca57","#ff6b6b","#48dbfb","#1dd1a1"]} refreshing={refresh} onRefresh={update} />}
-	        ListHeaderComponent={()=><ComponenteModal titulo={"Verbos"} subtitulo={"Los verbos son aquellas acciones ejecutadas por un sustantivo, por ejemplo \"una persona escribe\", \"escribe\" es el verbo ya que es la acción realizada por el sujeto."}/>}
+	        ListHeaderComponent={()=><ComponenteModal titulo={"Verbos"} subtitulo={"Los verbos son aquellas acciones ejecutadas por un sustantivo, por ejemplo: \"una persona escribe\", \"escribe\" es el verbo, ya que es la acción realizada por el sujeto."}/>}
 	        ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
 	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:15}}/>}
 	        ListEmptyComponent={()=>(
