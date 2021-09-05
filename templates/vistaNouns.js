@@ -59,7 +59,7 @@ const Main = () => {
 		data={nouns}
 	    	keyExtractor={item => item}
             refreshControl={<RefreshControl colors={["#feca57","#ff6b6b","#48dbfb","#1dd1a1"]} refreshing={refresh} onRefresh={update} />}
-	        ListHeaderComponent={()=><ComponenteModal titulo={"Sustantivos"} subtitulo={"Los Sustantivos o nouns en ingles son objetos que podemos encontrar en la vida diaria, por ejemplo: una computadora, un libro, una idea, una estación de gas o hasta un perrito, como puedes entender un noun puede ser cualquier cosa que te imagines, es vital que sepas los nouns básicos y así ampliar tu vocabulario en el idioma ingles."}/>}
+	        ListHeaderComponent={()=><ComponenteModal titulo={"Sustantivos"} subtitulo={"Los Sustantivos o nouns en ingles \n son objetos que podemos encontrar \n en la vida diaria, por ejemplo: \n una computadora, un libro, una idea, una estación de gas o hasta un perrito, como puedes entender un noun puede \n ser cualquier cosa que te imagines, \n es vital que sepas los nouns básicos y así ampliar tu vocabulario \n en el idioma ingles."}/>}
 	        ListFooterComponent={()=><View style={{width: WIDTH, paddingTop:20}}/>}
 	    	ItemSeparatorComponent={()=><View style={{width: WIDTH, paddingTop:15}}/>}
 	        ListEmptyComponent={()=>(
@@ -110,7 +110,7 @@ const ComponenteModal = (props) => {
 
 			<View style={{width:WIDTH * 0.95,padding:20,alignSelf:"center", backgroundColor:"white",alignItems:"center",justifyContent:"space-around",borderRadius:5}}>
 			<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#0984e3" }}>{titulo}</Text>
-    		<Text style={{margin:4, textAlign:"center",fontSize:15,fontWeight:"bold", color:"#353b48" }}>{subtitulo}</Text>
+    		<Text style={{margin:6, textAlign:"center",fontSize:14,fontWeight:"bold", color:"#353b48" }}>{subtitulo}</Text>
 				
 				<TouchableOpacity style={{margin:4, alignSelf:"center",padding:6,backgroundColor:"#ff6b6b", width: WIDTH * 0.9 * 0.25, justifyContent:"center", borderRadius:5, marginTop:5}} onPress={()=>setVisible(false)}>
 					<Text style={{textAlign:"center",fontWeight:"bold",color:"white"}}>Volver</Text>

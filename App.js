@@ -23,7 +23,7 @@ import VistaQuist from "./templates/vistaQuist"
 import VistaVerbos from "./templates/vistaVerbos"
 import VistaSlangs from "./templates/vistaSlangs"
 import VistaNouns from "./templates/vistaNouns"
-
+import VistaSpeechToText from "./templates/VistaSpeechToText"
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -39,6 +39,7 @@ const App = () => {
       <Drawer.Screen name="Slangs" component={VistaSlangs} />
       <Drawer.Screen name="Verbs" component={VistaVerbos} />
       <Drawer.Screen name="Quiz" component={VistaQuist} />
+      <Drawer.Screen name="Speech" component={VistaSpeechToText} />
     </Drawer.Navigator>
   </NavigationContainer>
   );
